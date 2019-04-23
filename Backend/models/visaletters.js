@@ -18,7 +18,7 @@ const visaletterSchema = mongoose.Schema({
     amount:{type:Number},
     fname:{type:String},
     lname:{type:String},
-    passportno:{type:Number}
+    passportno:{type:String}
     dob: {type:String}
 });
 const Visaletter = mongoose.model( 'Visaletter' , visaletterSchema);
@@ -39,7 +39,7 @@ function validateVisaletter(visaletter){
         amount:Joi.number(),
         fname:Joi.string(),
         lname:Joi.string(),
-        passportno:Joi.number().integer(),
+        passportno:Joi.string(),
         dob: Joi.string()
     };
     return Joi.validate(visaletter , schema);
