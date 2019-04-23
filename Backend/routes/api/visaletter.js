@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */
+/*jshint esversion: 8 */
 const {Visaletter,validateVisaletter} = require('../models/visaletters');
 const express = require('express');
 const router = express.Router();
