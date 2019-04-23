@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(express.json());
+app.use(express.static(__dirname + '/public/'));
 
 // connecting to mongodb
 const mongouri = 'mongodb://pooja1:q32AhKFb7CDg7R5@ds145486.mlab.com:45486/finity_backend_test';
@@ -14,7 +15,7 @@ mongoose.connect(mongouri)
 
 // Homepage route
 app.get('/',(req,res) => {
-   res.sendFile(path.join(__dirname+'/static/app/signin-simple.html'));
+   res.sendFile(path.join(__dirname+'/public/app/signin-simple.html'));
 });
 
 // use routes
