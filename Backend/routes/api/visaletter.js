@@ -1,5 +1,6 @@
 /*jshint esversion: 8 */
-const {Visaletter,validateVisaletter} = require('../models/visaletters');
+const Visaletter = require('../../models/visaletters').Visaletter;
+const validateVisaletter = require('../../models/visaletters').validateVisaletter;
 const express = require('express');
 const router = express.Router();
 const Joi = require('joi');
@@ -7,8 +8,9 @@ const mongoose = require('mongoose');
 
 //GET requests view all Visaletters
 // url 'localhost:3000/api/visaletter/'
-router.get('/',async (req ,res) => {
+router.get('/', async(req ,res) => {
     const visaletters = await Visaletter.find().sort('fname');
+    console.log(req.body);
     console.log(visaletters);
     res.send(visaletters);
 });

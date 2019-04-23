@@ -1,5 +1,6 @@
 /* unit test cases */
 /* req body for visa letters */
+/*
 {
     "multiplicity":"single",
     "country":"India",
@@ -17,3 +18,4 @@
     "passportno":"j6549874",
     "dob":"13/3/1998"
 }
+*/

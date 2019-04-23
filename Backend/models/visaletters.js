@@ -8,8 +8,8 @@ const visaletterSchema = mongoose.Schema({
     multiplicity:{type:String},
     country:{type:String},
     purpose:{type:String},
-    entrydate:{type:Date},
-    exitdate:{type:Date},
+    entrydate:{type:String},
+    exitdate:{type:String},
     placesofvisit:{type:Array},
     hotels:{type:String},
     organization:{type:Number},
@@ -18,7 +18,7 @@ const visaletterSchema = mongoose.Schema({
     amount:{type:Number},
     fname:{type:String},
     lname:{type:String},
-    passportno:{type:String}
+    passportno:{type:String},
     dob: {type:String}
 });
 const Visaletter = mongoose.model( 'Visaletter' , visaletterSchema);
@@ -29,8 +29,8 @@ function validateVisaletter(visaletter){
         multiplicity:Joi.string(),
         country:Joi.string(),
         purpose:Joi.string(),
-        entrydate:Joi.number().integer(),
-        exitdate:Joi.number().integer(),
+        entrydate:Joi.string(),
+        exitdate:Joi.string(),
         placesofvisit:[Joi.string(), Joi.number()],
         hotels:Joi.string(),
         organization:Joi.number().max(5),
