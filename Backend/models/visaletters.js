@@ -27,22 +27,22 @@ const Visaletter = mongoose.model( 'Visaletter' , visaletterSchema);
 function validateVisaletter(visaletter){
     const schema ={
         multiplicity:Joi.string(),
-        country:Joi.string(),
-        purpose:Joi.string(),
+        placesofvisit:[Joi.string(), Joi.number()],
         entrydate:Joi.string(),
         exitdate:Joi.string(),
-        placesofvisit:[Joi.string(), Joi.number()],
         hotels:Joi.string(),
-        organization:Joi.number().max(5),
-        noofpassengers:Joi.number().max(5),
-        paymentstatus:Joi.string(),
-        amount:Joi.number(),
         fname:Joi.string(),
         lname:Joi.string(),
         passportno:Joi.string(),
-        dob: Joi.string()
+        dob: Joi.string(),
+        country:Joi.string(),
+        purpose:Joi.string(),
+        organization:Joi.number().max(5),
+        noofpassengers:Joi.number().max(5),
+        paymentstatus:Joi.string(),
+        amount:Joi.number()
     };
-    return Joi.validate(visaletter , schema);
+    return Joi.validate(visaletter,schema);
 }
 
 module.exports.Visaletter=Visaletter;

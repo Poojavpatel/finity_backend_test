@@ -20,34 +20,33 @@ router.get('/', async(req ,res) => {
 // url 'localhost:3000/api/visaletter/'
 router.post('/', async (req,res) => {
     console.log(req.body);
-    const result = validateVisaletter(req.body); 
-    if(result.error){
-       return res.status(400).send("some or many fields in your form failed validation");
-    }
-    // const visaletter = new Visaletter({
-    //     multiplicity:req.body.mv,
-    //     country:req.body.country,
-    //     purpose:req.body.pov,
-    //     entrydate:req.body.entrydate,
-    //     exitdate:req.body.exitdate,
-    //     placesofvisit:req.body.placesofvisit,
-    //     hotels:req.body.hotels,
-    //     organization:req.body.organization,
-    //     noofpassengers:req.body.noofpassengers,
-    //     paymentstatus:req.body.paymentstatus,
-    //     amount:req.body.amount,
-    //     fname:req.body.firstname,
-    //     lname:req.body.lastname,
-    //     passportno:req.body.passno,
-    //     dob:req.body.dob
-	// });
-    // const resultvisaletter = await visaletter.save();
-    // console.log('visaletter', visaletter);
+    // const result = validateVisaletter(req.body); 
+    // if(result.error){
+    //    return res.status(400).send("some or many fields in your form failed validation");
+    // }
+    const visaletter = new Visaletter({
+        multiplicity:req.body.mv,
+        purpose:req.body.pov,
+        hotels:req.body.hotels,
+        entrydate:req.body.entrydate,
+        exitdate:req.body.exitdate,
+        fname:req.body.firstname,
+        lname:req.body.lastname,
+        passportno:req.body.passno,
+        dob:req.body.dob,
+        // placesofvisit:req.body.placesofvisit,
+        // organization:req.body.organization,
+        // noofpassengers:req.body.noofpassengers,
+        // paymentstatus:req.body.paymentstatus,
+        // amount:req.body.amount,
+        // country:req.body.country,
+	});
+    const resultvisaletter = await visaletter.save();
+    console.log('visaletter', visaletter);
     res.set({
 		'Access-Control-Allow-Origin' : '*'
     });
-    // return res.sendFile(path.join(__dirname+'../../../public/app/letters.html'));
-    return res.send("hello");
+    return res.sendFile(path.join(__dirname+'../../../public/app/letters.html'));
 });
 
 module.exports = router ;
