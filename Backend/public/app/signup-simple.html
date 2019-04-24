@@ -47,19 +47,21 @@
         <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal"></span> FINITY BACKEND TEST <span class="tx-normal"></span></div>
         <div class="tx-center mg-b-40">Visa Letter Generator by Finity TechServ</div>
 
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter your username">
-        </div><!-- form-group -->
-        <div class="form-group">
-          <input type="password" class="form-control" placeholder="Enter your password">
-        </div><!-- form-group -->
-        <div class="form-group">
-          <input type="password" class="form-control" placeholder="Enter your fullname">
-        </div><!-- form-group -->
-        <div class="form-group">
-          <input type="email" class="form-control" placeholder="Enter your Email">
-        </div><!-- form-group -->
-        <button type="submit" class="btn btn-info btn-block">Sign Up</button>
+        <form action="/api/signup" method="POST"> 
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter your username" name="username" />
+          </div><!-- form-group -->
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Enter your password" name="password" />
+          </div><!-- form-group -->
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter your fullname" name="fullname" />
+          </div><!-- form-group -->
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Enter your Email" name="email" />
+          </div><!-- form-group -->
+          <input type="submit" class="btn btn-info btn-block">Sign Up</input>
+        </form>
 
         <div class="mg-t-40 tx-center">Already a Member? <a href="signin-simple.html" class="tx-info">Sign In</a></div>
       </div><!-- login-wrapper -->

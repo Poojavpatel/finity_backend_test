@@ -19,3 +19,11 @@
     "dob":"13/3/1998"
 }
 */
+/*
+{
+    "username":"pooja",
+    "password":"pooja1234",
+    "fullname":"poojapatel",
+    "email":"pooja@gmail.com"
+}
+*/

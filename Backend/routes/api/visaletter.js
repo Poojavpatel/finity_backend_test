@@ -2,6 +2,7 @@
 const Visaletter = require('../../models/visaletters').Visaletter;
 const validateVisaletter = require('../../models/visaletters').validateVisaletter;
 const express = require('express');
+const path = require('path');
 const router = express.Router();
 const Joi = require('joi');
 const mongoose = require('mongoose');
