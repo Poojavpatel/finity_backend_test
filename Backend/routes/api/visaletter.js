@@ -19,30 +19,35 @@ router.get('/', async(req ,res) => {
 //POST requests add a new visaletter
 // url 'localhost:3000/api/visaletter/'
 router.post('/', async (req,res) => {
+    console.log(req.body);
     const result = validateVisaletter(req.body); 
     if(result.error){
        return res.status(400).send("some or many fields in your form failed validation");
     }
-    const visaletter = new Visaletter({
-        multiplicity:req.body.multiplicity,
-        country:req.body.country,
-        purpose:req.body.purpose,
-        entrydate:req.body.entrydate,
-        exitdate:req.body.exitdate,
-        placesofvisit:req.body.placesofvisit,
-        hotels:req.body.hotels,
-        organization:req.body.organization,
-        noofpassengers:req.body.noofpassengers,
-        paymentstatus:req.body.paymentstatus,
-        amount:req.body.amount,
-        fname:req.body.fname,
-        lname:req.body.lname,
-        passportno:req.body.passportno,
-        dob:req.body.dob
-	});
-    const resultvisaletter = await visaletter.save();
-    console.log('visaletter', visaletter);
-    res.send(visaletter);
+    // const visaletter = new Visaletter({
+    //     multiplicity:req.body.mv,
+    //     country:req.body.country,
+    //     purpose:req.body.pov,
+    //     entrydate:req.body.entrydate,
+    //     exitdate:req.body.exitdate,
+    //     placesofvisit:req.body.placesofvisit,
+    //     hotels:req.body.hotels,
+    //     organization:req.body.organization,
+    //     noofpassengers:req.body.noofpassengers,
+    //     paymentstatus:req.body.paymentstatus,
+    //     amount:req.body.amount,
+    //     fname:req.body.firstname,
+    //     lname:req.body.lastname,
+    //     passportno:req.body.passno,
+    //     dob:req.body.dob
+	// });
+    // const resultvisaletter = await visaletter.save();
+    // console.log('visaletter', visaletter);
+    res.set({
+		'Access-Control-Allow-Origin' : '*'
+    });
+    // return res.sendFile(path.join(__dirname+'../../../public/app/letters.html'));
+    return res.send("hello");
 });
 
 module.exports = router ;

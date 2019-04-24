@@ -26,8 +26,8 @@ router.post('/', async(req,res) => {
     res.set({
 		'Access-Control-Allow-Origin' : '*'
 	});
-    return res.sendFile(path.join(__dirname+'/public/app/visaletter.html'));
-    res.end();
+    return res.sendFile(path.join(__dirname+'../../../public/app/visaletter.html'));
+    // res.end();
 });
 
 module.exports = router ;
