@@ -10,11 +10,10 @@ const mongoose = require('mongoose');
 //GET requests view all Visaletters
 // url 'localhost:3000/api/visaletter/'
 router.get('/', async(req ,res) => {
-    const visaletters = await Visaletter.find();
+    const visaletters = await Visaletter.find().sort('_id');
     console.log(visaletters);
     // res.send(visaletters);
-    var name="chodu";
-    res.render(__dirname+'/../../public/app/letters.html',{name:name});
+    res.render(__dirname+'/../../public/app/letters.html',{visalettersdic:visaletters});
 });
 
 //POST requests add a new visaletter
@@ -47,8 +46,9 @@ router.post('/', async (req,res) => {
     res.set({
 		'Access-Control-Allow-Origin' : '*'
     });
+    const visaletters = await Visaletter.find().sort('_id');
     // return res.sendFile(path.join(__dirname+'../../../public/app/letters.html'));
-    return res.render('letters.html');
+    return res.render('letters.html',{visalettersdic:visaletters});
 });
 
 module.exports = router ;
