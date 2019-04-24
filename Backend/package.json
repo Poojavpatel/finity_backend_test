@@ -10,5 +10,13 @@
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^1.18.11"
+  },
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "joi": "^14.3.1",
+    "mongoose": "^5.5.3",
+    "path": "^0.12.7",
+    "pug": "^2.0.3"
   }
 }

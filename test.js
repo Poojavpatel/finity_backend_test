@@ -26,4 +26,5 @@
     "fullname":"poojapatel",
     "email":"pooja@gmail.com"
 }
+<%= name %>
 */
