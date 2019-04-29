@@ -44,6 +44,9 @@ app.use('/api/signup' , signup);
 const login = require('./routes/api/login.js');
 app.use('/api/login' , login);
 
+const logout = require('./routes/api/logout.js');
+app.use('/api/logout' , logout);
+
 // setting up server
 port = process.env.PORT || 5000;
 app.listen(port,() => console.log(`Server started at port ${port}`));

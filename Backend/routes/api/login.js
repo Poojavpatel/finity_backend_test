@@ -16,6 +16,7 @@ router.post('/', function(req,res,next){
     passport.authenticate('local',{
         successRedirect: '/api/visaletter',
         failureRedirect: '/api/signup/',
+        session: false,
         failureFlash: true
     })(req, res, next);
 });

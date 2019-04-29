@@ -9,7 +9,9 @@ const userSchema = mongoose.Schema({
     fullname:{type:String,required:true},
     email:{type:String,required:true}
 });
-
+userSchema.methods.validPassword = function(password) {
+    return ( this.password === password );
+};
 const User = mongoose.model( 'User' , userSchema);
 
 //Validating a user
