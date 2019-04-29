@@ -4,11 +4,12 @@ const Joi = require('joi');
 const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
-    username:{type:String},
-    password:{type:String},
-    fullname:{type:String},
-    email:{type:String}
+    username:{type:String,required:true},
+    password:{type:String,required:true},
+    fullname:{type:String,required:true},
+    email:{type:String,required:true}
 });
+
 const User = mongoose.model( 'User' , userSchema);
 
 //Validating a user

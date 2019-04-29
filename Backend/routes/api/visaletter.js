@@ -7,23 +7,16 @@ const router = express.Router();
 const Joi = require('joi');
 const mongoose = require('mongoose');
 
-//GET requests view all Visaletters
+//GET requests display the visaletter form page
 // url 'localhost:3000/api/visaletter/'
 router.get('/', async(req ,res) => {
-    const visaletters = await Visaletter.find().sort('_id');
-    console.log(visaletters);
-    // res.send(visaletters);
-    res.render(__dirname+'/../../public/app/letters.html',{visalettersdic:visaletters});
+    res.render(__dirname+'/../../public/app/visaletter.html');
 });
 
 //POST requests add a new visaletter
 // url 'localhost:3000/api/visaletter/'
 router.post('/', async (req,res) => {
     console.log(req.body);
-    // const result = validateVisaletter(req.body); 
-    // if(result.error){
-    //    return res.status(400).send("some or many fields in your form failed validation");
-    // }
     const visaletter = new Visaletter({
         multiplicity:req.body.mv,
         purpose:req.body.pov,
@@ -47,7 +40,6 @@ router.post('/', async (req,res) => {
 		'Access-Control-Allow-Origin' : '*'
     });
     const visaletters = await Visaletter.find().sort('_id');
-    // return res.sendFile(path.join(__dirname+'../../../public/app/letters.html'));
     return res.render('letters.html',{visalettersdic:visaletters});
 });
 

@@ -7,6 +7,12 @@ const Joi = require('joi');
 const mongoose = require('mongoose');
 const path = require('path');
 
+//GET requests show signup page
+// url 'localhost:3000/api/signup/'
+router.get('/', async(req ,res) => {
+    res.render(__dirname+'/../../public/app/signup-simple.html');
+});
+
 //POST requests signup a new user
 // url 'localhost:5000/api/signup/'
 router.post('/', async(req,res) => {
